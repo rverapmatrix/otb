@@ -14,5 +14,16 @@
     <p>Nombre: <?php echo $nombre; ?></p>
     <p>Precio: <?php echo $precio; ?></p>
     <p>Categoria: <?php echo $categoria; ?></p>
+
+    <hr>
+
+    <?php
+
+        echo "".calcularAntiguedad('1995-05-15');
+
+        echo "<br>";
+
+        echo "".calcularIncremento(7);
+    ?>
 </body>
 </html>

@@ -24,7 +24,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Ingrese al sistema</p>
 
-      <form action="../../index3.html" method="post">
+      <form action="<?php echo base_url().'validar'?>" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario">
           <div class="input-group-append">
@@ -50,6 +50,18 @@
           <!-- /.col -->
         </div>
       </form>
+
+      <br>
+
+      <div class="row">
+        <div class="col-12">
+          <?php if(isset($mensaje)){?>
+              <div class="alert alert-<?= $tipo; ?>" role="alert">
+                <strong>Error</strong> <?= $mensaje; ?>
+              </div>
+          <?php } ?>
+        </div>
+      </div>
 
       
       <!-- /.social-auth-links -->

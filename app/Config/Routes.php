@@ -43,6 +43,8 @@ $routes->get('/inicio', 'Login::index');
 
 $routes->get('/principal', 'Principal::index');
 
+$routes->add('/validar', 'Login::validarIngreso'); //ruta para validar ingreso de usuario
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

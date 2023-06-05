@@ -7,14 +7,14 @@ use CodeIgniter\Model;
 class UsuarioModel extends Model
 {
     protected $table      = 'usuario';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'idUsuario';
 
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['nombre', 'apellidos','usuario','password','tipo','estado'];
+    protected $allowedFields = ['usuario','password','nombre', 'apellidoPat','apellidoMat','rol','celular','direccion','estado'];
 
     public function getUsuario($valor){
         $this->db->connect();

@@ -28,8 +28,8 @@ class Login extends BaseController
             if($passwDB == $passwIngresado){
                 $data = [
                     'nombre'=> $usuarioBD[0]['nombre'],
-                    'apellidos'=> $usuarioBD[0]['apellidos'],
-                    'id'=> $usuarioBD[0]['id']
+                    'apellidoP'=> $usuarioBD[0]['apellidoPat'],
+                    'id'=> $usuarioBD[0]['idUsuario']
                 ];
 
                 session()->set($data); //las variables de session

@@ -123,7 +123,7 @@
                     <div class="col-4">
                         <div class="form-group">
                           <label for="">Tipo Accion</label>
-                          <select class="form-control" name="" id="">
+                          <select class="form-control" name="tipoAccion" id="tipoAccion">
                             <option value="socio">Normal</option>
                             <option value="administrador">Tercera edad</option>
                             
@@ -134,7 +134,7 @@
                         <div class="form-group">
                         <label for="">Costo</label>
                         <input type="text"
-                            class="form-control" name="apeMat" id="apeMat" aria-describedby="helpId" placeholder="Costo">
+                            class="form-control" name="costo" id="costo" aria-describedby="helpId" placeholder="Costo">
                         
                         </div>
                     </div>
@@ -142,7 +142,7 @@
                         <div class="form-group">
                         <label for="">Numero Medidor</label>
                         <input type="text"
-                            class="form-control" name="apeMat" id="apeMat" aria-describedby="helpId" placeholder="Nro Medidor">
+                            class="form-control" name="nroMedidor" id="nroMedidor" aria-describedby="helpId" placeholder="Nro Medidor">
                         
                         </div>
                     </div>

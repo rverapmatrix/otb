@@ -45,7 +45,7 @@ class Principal extends BaseController
         $this->userModel = new UsuarioModel();
         /**campos usuario*** */
 
-       $nombre = $this->request->getPost("nombre");
+        $nombre = $this->request->getPost("nombre");
         $apellidoPat = $this->request->getPost("apePat");
         $apellidoMat = $this->request->getPost("apeMat");
         $usuario = $this->request->getPost("usuario");
@@ -68,6 +68,20 @@ class Principal extends BaseController
 
         $this->userModel->insert($dataUsuario);
 
+        /*obtenicion de valores d ecampos accion y despues el insert*/
+        $tipoAccion = $this->request->getPost("tipoAccion");
+        $costo = $this->request->getPost("costo");
+        $nroMedidor = $this->request->getPost("nroMedidor");
+        
+        $idUsuarioUlt = 
+
+        $dataAccion = [
+            'tipoAccion'=>$tipoAccion,
+            'costo'=>$costo,
+            'nroMedidor'=>$nroMedidor,
+            'estado'=>'activo'
+            'Usuario_idUsuario'=>
+        ];
         $mensaje = [
             'tipo'=>'success',
             'mensaje'=>'El registro se realizo de forma existosa!'

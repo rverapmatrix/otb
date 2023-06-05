@@ -17,4 +17,11 @@ class AccionModel extends Model
     protected $allowedFields = ['tipoAccion','costo','titular', 'estado'];
 
 
+    public function getIdUsuarioUltimo(){
+        $this->db->connect();
+        $builder = $this->findAll();
+        $builder->where();
+    }
+
+
 }

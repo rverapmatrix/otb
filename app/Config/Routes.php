@@ -45,6 +45,12 @@ $routes->get('/principal', 'Principal::index');
 
 $routes->add('/validar', 'Login::validarIngreso'); //ruta para validar ingreso de usuario
 
+$routes->add('/socios', 'Principal::mostrarRegistros'); //ruta para validar ingreso de usuario 
+
+$routes->add('/agregarSocio', 'Principal::agregarSocio');
+
+$routes->add('/insertSocio', 'Principal::insertSocio');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -25,4 +25,6 @@ class UsuarioModel extends Model
         return $resultado;
     }
 
+    
+
 }

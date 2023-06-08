@@ -141,8 +141,7 @@
                     <div class="col-4">
                         <div class="form-group">
                         <label for="">Numero Medidor</label>
-                        <input type="text"
-                            class="form-control" name="nroMedidor" id="nroMedidor" aria-describedby="helpId" placeholder="Nro Medidor">
+                        <input type="text" class="form-control" name="nroMedidor" id="nroMedidor" aria-describedby="helpId" placeholder="Nro Medidor">
                         
                         </div>
                     </div>

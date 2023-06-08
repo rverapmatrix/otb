@@ -14,14 +14,10 @@ class AccionModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['tipoAccion','costo','titular', 'estado'];
+    protected $allowedFields = ['tipoAccion','costo','titular','nroMedidor', 'estado', 'Usuario_idUsuario'];
 
 
-    public function getIdUsuarioUltimo(){
-        $this->db->connect();
-        $builder = $this->findAll();
-        $builder->where();
-    }
+  
 
 
 }

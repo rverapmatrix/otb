@@ -2,11 +2,13 @@
 
 namespace App\Controllers;
 
+use App\Models\AccionModel;
 use App\Models\UsuarioModel;
 
 class Principal extends BaseController
 {
     protected $userModel;
+    protected $accionModel;
     public function index()
     {
         return view('Estructura/body');
@@ -43,6 +45,7 @@ class Principal extends BaseController
     public function insertSocio(){
         
         $this->userModel = new UsuarioModel();
+        $this->accionModel = new AccionModel();
         /**campos usuario*** */
 
         $nombre = $this->request->getPost("nombre");
@@ -68,20 +71,25 @@ class Principal extends BaseController
 
         $this->userModel->insert($dataUsuario);
 
-        /*obtenicion de valores d ecampos accion y despues el insert*/
+        /*obtenicion de valores de campos accion y despues realizamos el insert*/
         $tipoAccion = $this->request->getPost("tipoAccion");
         $costo = $this->request->getPost("costo");
-        $nroMedidor = $this->request->getPost("nroMedidor");
-        
-        $idUsuarioUlt = 
+        echo $nroMedidor = $this->request->getPost("nroMedidor");
+        $idUsuarioUlt=$this->userModel->getIdUsuarioUltimo();
+        $idUsuarioUlt=$idUsuarioUlt[0]['idUsuario'];  //para obtener el ultimo id de Usuario registrado
 
-        $dataAccion = [
+        echo $idUsuarioUlt;
+       $dataAccion = [
             'tipoAccion'=>$tipoAccion,
             'costo'=>$costo,
             'nroMedidor'=>$nroMedidor,
-            'estado'=>'activo'
-            'Usuario_idUsuario'=>
+            'estado'=>'activo',
+            'Usuario_idUsuario'=>$idUsuarioUlt
+            
         ];
+
+        $this->accionModel->insert($dataAccion);
+        
         $mensaje = [
             'tipo'=>'success',
             'mensaje'=>'El registro se realizo de forma existosa!'

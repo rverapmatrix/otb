@@ -25,6 +25,16 @@ class UsuarioModel extends Model
         return $resultado;
     }
 
+    public function getIdUsuarioUltimo()
+    {
+        $builder = $this->db->table("usuario");
+        $builder->orderBy('idUsuario', 'DESC');
+        $builder->limit(1);
+    
+        return $builder->get()->getResultArray();
+    }
+    
+
     
 
 }

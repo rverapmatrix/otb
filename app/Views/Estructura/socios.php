@@ -85,7 +85,7 @@
                                 <a name="" id="" class="btn btn-warning" href="<?php echo base_url().'updateFormSocio/'.$usuario['idUsuario']?>" role="button"><i class="nav-icon fas fa-edit"></i></a>
                                 <!--<a name="" id="" class="btn btn-danger" href="#" role="button"><i class="nav-icon fas fa-trash"></i></a>-->
 
-                                <a class="btn btn-danger deleteUserBtn" data-idusuario="<?php echo $usuario['idUsuario']; ?>" href="#" data-toggle="modal" data-target="#confirmDeleteModal">Eliminar</a>
+                                <a class="btn btn-danger deleteUserBtn" data-idusuario="<?php echo $usuario['idUsuario']; ?>" href="#" data-toggle="modal" data-target="#confirmDeleteModal"><i class="nav-icon fas fa-trash"></i></a>
         
                             </td>
                         </tr>

@@ -58,19 +58,17 @@
     });
   </script>
 
-//codigo para eliminar registro de socios 
   
 <script>
-    $(document).ready(function() {
-        $('.btn-danger').click(function() {
-            let idUsuario = $(this).data('idusuario'); // Obtener el idUsuario del botón de eliminación
-            alert(idUsuario);
-            // Asignar el idUsuario a la ventana modal
-            $('#deleteUserId').text(idUsuario);
-            // Actualizar la URL de eliminación en el enlace "Eliminar" dentro de la ventana modal
-            $('#deleteUserLink').attr('href', '<?php echo base_url(); ?>deleteRegistroSocio/' + idUsuario);
-        });
+   $(document).ready(function() {
+    $('.deleteUserBtn').click(function() {
+        let idUsuario = $(this).data('idusuario'); // Obtener el idUsuario del botón de eliminación
+        $('#deleteUserId').text(idUsuario);
+        $('#deleteUserLink').attr('href', '<?php echo base_url(); ?>deleteRegistroSocio/' + idUsuario);
     });
+});
+
+
 </script>
 
 </body>

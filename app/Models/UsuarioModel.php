@@ -14,7 +14,7 @@ class UsuarioModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['usuario','password','nombre', 'apellidoPat','apellidoMat','rol','celular','direccion','estado'];
+    protected $allowedFields = ['idUsuario','usuario','password','nombre', 'apellidoPat','apellidoMat','rol','celular','direccion','estado'];
 
     public function getUsuario($valor){
         $this->db->connect();
@@ -33,6 +33,18 @@ class UsuarioModel extends Model
     
         return $builder->get()->getResultArray();
     }
+
+    public function getDatosUsuarioUpdate($idUsuario){
+        $builder = $this->db->table("usuario");
+        $builder->where('idUsuario', $idUsuario);
+        $builder->limit(1);
+    
+        return $builder->get()->getResultArray();
+    }
+
+    /*public function deleteRegistroSocio($idUsuario){
+
+    }*/
     
 
     

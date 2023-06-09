@@ -40,6 +40,17 @@
     <section class="content">
 
     <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12" id="alertTemporal">
+            <?php if(isset($mensaje)){?>
+                <div  class="alert alert-<?= $tipo; ?>" role="alert">
+                    <strong>Actualizacion Exitosa</strong> <?= $mensaje; ?>
+                </div>
+            <?php } ?>
+            </div>
+        </div>
+
         <div class="row">
           <div class="col-12">
            
@@ -71,8 +82,14 @@
                             <td><?php echo $usuario['celular']; ?></td>
                             <td><?php echo $usuario['direccion']; ?></td>
                             <td>
-                                <button type="button" class="btn btn-warning" alt="Editar"><i class="nav-icon fas fa-edit"></i></button>
-                                <button type="button" class="btn btn-danger" alt="Eliminar"><i class="nav-icon fas fa-trash"></i></button>
+                                <a name="" id="" class="btn btn-warning" href="<?php echo base_url().'updateFormSocio/'.$usuario['idUsuario']?>" role="button"><i class="nav-icon fas fa-edit"></i></a>
+                                <!--<a name="" id="" class="btn btn-danger" href="#" role="button"><i class="nav-icon fas fa-trash"></i></a>-->
+
+                                <a class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal" data-idusuario="<?php echo $usuario['idUsuario']; ?>">
+                                    <i class="nav-icon fas fa-trash"></i>
+                                </a>
+
+
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -99,9 +116,35 @@
       </div>
       <!-- /.container-fluid -->
 
+   <!-- Ventana modal para confirmar la eliminación -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar este registro? <span id="deleteUserId"></span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-danger" id="deleteUserLink" href="#">Eliminar1</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+
+
 
   <?php include 'footer.php'; ?>

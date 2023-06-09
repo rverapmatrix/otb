@@ -51,6 +51,14 @@ $routes->add('/agregarSocio', 'Principal::agregarSocio');
 
 $routes->add('/insertSocio', 'Principal::insertSocio');
 
+//$routes->add('/updateSocio', 'Principal::updateSocio');updateSocio
+
+$routes->get('updateFormSocio/(:num)', 'Principal::updateFormSocio/$1');
+
+$routes->add('updateRegistro/(:num)', 'Principal::updateRegistro/$1');
+
+$routes->add('deleteRegistroSocio/(:num)', 'Principal::deleteRegistroSocio/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

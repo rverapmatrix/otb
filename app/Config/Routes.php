@@ -59,6 +59,10 @@ $routes->add('updateRegistro/(:num)', 'Principal::updateRegistro/$1');
 
 $routes->add('deleteRegistroSocio/(:num)', 'Principal::deleteRegistroSocio/$1');
 
+$routes->add('cobros', 'Cobros::cobroServicio');
+
+$routes->add('generarCobro', 'Cobros::generarCobro');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

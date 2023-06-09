@@ -42,9 +42,11 @@ class UsuarioModel extends Model
         return $builder->get()->getResultArray();
     }
 
-    /*public function deleteRegistroSocio($idUsuario){
-
-    }*/
+    public function getUsuarios(){
+        $builder = $this->db->table("usuario");
+        $builder->where('estado', 'activo');
+        return $builder->get()->getResultArray();
+    }
     
 
     

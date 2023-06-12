@@ -65,6 +65,8 @@ $routes->add('generarCobro', 'Cobros::generarCobro');
 
 $routes->add('reportes', 'Reportes::reportes');
 
+$routes->add('filtrar', 'Reportes::filtrar');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

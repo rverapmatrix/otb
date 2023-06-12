@@ -28,7 +28,9 @@
 
     <!-- Main content -->
     <section class="content">
+        <form action="<?php echo base_url().'filtrar'?>" method="post">
         <div class="row">
+            
             <div class="col-6">
                 <div class="form-group">
                     <form class="form-inline">
@@ -56,9 +58,13 @@
                 </div>
             </div>
             <div class="col-3">
-                <a name="buscar" id="buscar" class="btn btn-primary" href="<?php echo base_url().'filtrar'?>" role="button">Buscar</a>
+                
+                <button type="submit" class="btn btn-primary">Filtrar</button>
             </div>
+
+            
         </div>
+        </form>
 
         <div class="row">
             <div class="col-12">

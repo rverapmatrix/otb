@@ -21,8 +21,9 @@ class Login extends BaseController
         $usuarioBD = $this->userModel->getUsuario($usuarioEnviado); //recibiendo los datos obtenidos del registro
 
         if(!empty($usuarioBD) && isset($usuarioBD[0]['usuario'])){
-            $decrypter = \Config\Services::encrypter();
-            $passwDB = $decrypter->decrypt(hex2bin($usuarioBD[0]['password']));
+            //$decrypter = \Config\Services::encrypter();
+            //$passwDB = $decrypter->decrypt(hex2bin($usuarioBD[0]['password']));
+            $passwDB = $usuarioBD[0]['password'];
             $passwIngresado = $this->request->getPost("password");
 
             if($passwDB == $passwIngresado){

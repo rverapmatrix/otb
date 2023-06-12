@@ -17,6 +17,16 @@ class CobroModel extends Model
     protected $allowedFields = ['idPago','tipoPago','monto','descuento', 'fecha','descripcion','mes','year','estado','idUsuarioPago'];
 
 
+    
+    public function getPagosSocios()
+    {
+        $builder = $this->db->table('pago');
+        $builder->select('usuario.idUsuario, usuario.nombre, usuario.apellidoPat, usuario.apellidoMat, pago.monto, pago.fecha, pago.mes, pago.year, pago.tipoPago');
+        $builder->join('usuario', 'usuario.idUsuario = pago.idUsuarioPago', 'inner');
+    
+        return $builder->get()->getResultArray();
+    }
+    
 
     
 

@@ -70,8 +70,8 @@ use App\Models\UsuarioModel;?>
                         
                         <option value="0">--Elegir Socio--</option>
                           <?php foreach ($usuarios as $usuario) : ?>
-                                <option value="<?php echo $usuario['idUsuario']; ?>"><?php echo $usuario['nombre']; ?></option>
-                            <?php endforeach; ?>
+                                <option value="<?php echo $usuario['idUsuario']; ?>"><?php echo $usuario['nombre']." ".$usuario['apellidoPat']; ?></option>
+                          <?php endforeach; ?>
                        
                     </select>
                     </div>

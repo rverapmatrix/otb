@@ -49,7 +49,7 @@ class Cobros extends BaseController
             'idUsuarioPago'=>$socio
         ];
 
-        $this->cobroModel->insert($dataCobro);
+        $this->cobroModel->insert($dataCobro); //insercion de registro de cobro
         //return redirect()->to(base_url().'cobros');
 
         $mensaje = [
